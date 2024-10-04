@@ -1,0 +1,21 @@
+/* CustomList.module.css */
+.customList {
+    list-style: none;
+    padding: 0;
+}
+
+.customList li {
+    position: relative;
+    padding-left: 20px;
+}
+
+.customList li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.75rem;
+    color: black;
+    /* Adjust the color or size as needed */
+}

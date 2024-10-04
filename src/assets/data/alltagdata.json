@@ -1,0 +1,57 @@
+[
+    {
+        "title": "Top Cities",
+        "title_tag": "top_cities",
+        "image_src": "/icons/top_cities.jpg"
+    },
+    {
+        "title": "Countryside",
+        "title_tag": "country_side",
+        "image_src": "/icons/country_side.jpg"
+    },
+    {
+        "title": "Top of the World",
+        "title_tag": "top_of_the_world",
+        "image_src": "/icons/top_of_the_world.jpg"
+    },
+    {
+        "title": "OMG",
+        "title_tag": "omg",
+        "image_src": "/icons/omg.jpg"
+    },
+    {
+        "title": "Amazing Views",
+        "title_tag": "amazing_views",
+        "image_src": "/icons/amazing_views.jpg"
+    },
+    {
+        "title": "Bed & Breakfast",
+        "title_tag": "bed_n_breakfast",
+        "image_src": "/icons/bed_n_breakfast.jpg"
+    },
+    {
+        "title": "Caves",
+        "title_tag": "caves",
+        "image_src": "/icons/caves.jpg"
+    },
+    {
+        "title": "Rooms",
+        "title_tag": "rooms",
+        "image_src": "/icons/rooms.jpg"
+    },
+    {
+        "title": "Islands",
+        "title_tag": "islands",
+        "image_src": "/icons/islands.jpg"
+    },
+    {
+        "title": "Beachfront",
+        "title_tag": "beach_front",
+        "image_src": "/icons/beach_front.jpg"
+    },
+    {
+        "title": "Lakefront",
+        "title_tag": "lake_front",
+        "image_src": "/icons/lake_front.jpg"
+    }
+]
