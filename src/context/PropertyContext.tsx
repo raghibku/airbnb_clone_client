@@ -60,7 +60,7 @@ export const PropertyProvider = ({ children }: any) => {
     console.log(bookingState)
   
     try {
-      const response = await axios.get('https://airbnb-clone-server-five.vercel.app/searchedProperties', {
+      const response = await axios.get('https://airbnb-clone-server-7jym9irfn-raghibs-projects.vercel.app/searchedProperties', {
         params: bookingState, // Use the state from BookingContext as query params
       });
       dispatch({ type: FETCH_PROPERTIES_SUCCESS, payload: response.data });
