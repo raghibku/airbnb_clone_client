@@ -1,0 +1,16 @@
+.price-range-slider {
+    width: 100%;
+    margin: 20px 0;
+  }
+  
+  .price-values {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .price-values span {
+    font-size: 14px;
+    color: #333;
+  }
+  

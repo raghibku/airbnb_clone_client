@@ -11,6 +11,10 @@ interface BookingState {
   children: number;
   pets: number;
   country: string;
+  type_of_place: string;
+  min_price: number;
+  max_price: number;
+  display_before_taxes : boolean;
 }
 
 // Define the types for action
@@ -21,7 +25,11 @@ type BookingAction =
   | { type: "SET_COUNTRY"; payload: string }
   | { type: "SET_ADULTS"; payload: number }
   | { type: "SET_CHILDREN"; payload: number }
-  | { type: "SET_PETS"; payload: number };
+  | { type: "SET_PETS"; payload: number }
+  | { type: "SET_TYPE_OF_PLACE"; payload: string }
+  | { type: "SET_MIN_PRICE"; payload: number }
+  | { type: "SET_MAX_PRICE"; payload: number }
+  | { type: "SET_DISPLAY_BEFORE_TAXES"; payload: boolean };
 
 // Define the initial state
 const initialState: BookingState = {
@@ -32,6 +40,10 @@ const initialState: BookingState = {
   adults: 0,
   children: 0,
   pets: 0,
+  type_of_place: "",
+  min_price: 0,
+  max_price: 10000,
+  display_before_taxes:false,
 };
 
 // Define the reducer function with proper types
@@ -51,6 +63,14 @@ function bookingReducer(state: BookingState, action: BookingAction): BookingStat
       return { ...state, children: action.payload };
     case "SET_PETS":
       return { ...state, pets: action.payload };
+    case "SET_TYPE_OF_PLACE":
+      return { ...state, type_of_place: action.payload };
+    case "SET_MIN_PRICE":
+      return { ...state, min_price: action.payload };
+    case "SET_MAX_PRICE":
+      return { ...state, max_price: action.payload };
+    case "SET_DISPLAY_BEFORE_TAXES":
+      return { ...state, display_before_taxes: action.payload };
     // default:
     //   throw new Error(`Unknown action: ${action.type}`);
   }

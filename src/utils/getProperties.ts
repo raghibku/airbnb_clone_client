@@ -1,5 +1,5 @@
 export const getStaticProps = async () => {
-    const res = await fetch('http://localhost:5000/properties');
+    const res = await fetch('https://airbnb-clone-server-five.vercel.app/properties');
     const data = await res.json();
 
     return {

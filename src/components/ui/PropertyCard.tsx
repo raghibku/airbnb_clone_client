@@ -1,3 +1,4 @@
+import { useBooking } from "@/context/BookingContext";
 import Image from "next/image"
 import { IoIosStar } from "react-icons/io";
 
@@ -24,6 +25,8 @@ interface PropertyCardProps {
 }
 
 const PropertyCard:React.FC<PropertyCardProps> = ({ property }) => {
+    const {state} = useBooking()
+
     const { property_name, property_images, property_location, vacancy_start, vacancy_end, price, rating } = property
     return (
         <div className="flex flex-col justify-between items-start ">
@@ -33,7 +36,7 @@ const PropertyCard:React.FC<PropertyCardProps> = ({ property }) => {
                     <Image
                         src={property_images[0]}
                         width={300}
-                        height={290}
+                        height={0}
                         alt={property_name}
                         className="h-[290px] w-[300px] object-cover rounded-md"
                     />
@@ -45,7 +48,7 @@ const PropertyCard:React.FC<PropertyCardProps> = ({ property }) => {
                     <Image
                         src={property_images[1]}
                         width={300}
-                        height={290}
+                        height={0}
                         alt={property_name}
                         className="h-[290px] w-[300px] object-cover rounded-md"
                     />
@@ -70,7 +73,7 @@ const PropertyCard:React.FC<PropertyCardProps> = ({ property }) => {
             {/* chk in out */}
             <p className="text-softText">{vacancy_start}-{vacancy_end}</p>
             {/* price */}
-            <p><span className="font-semibold">${price}</span> night</p>
+            <p><span className="font-semibold">${state.display_before_taxes?price:(price+price*0.15)}</span> night</p>
 
         </div>
     )

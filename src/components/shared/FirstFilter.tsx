@@ -42,6 +42,7 @@ const FirstFilter = () => {
         setIsActive(true);
     };
     const handleDeactivate = () => {
+        
         setIsActive(false);
     };
 
@@ -62,24 +63,29 @@ const FirstFilter = () => {
         setdateText(`${format(range.startDate as Date, 'MM/dd/yyyy')}-${format(range.endDate as Date, 'MM/dd/yyyy')}`)
     };
 
+    const handleClearDate =()=>{
+        setcheckInDate("")
+        setcheckInDate("")
+    }
+
     return (
         <ResponsiveDiv>
             <div className="w-full flex justify-center items-center text-xs ">
                 {/* outer container */}
                 <form onClick={handleActivate}
-                    onBlur={handleDeactivate} className="flex justify-between items-center px-2 py-2 rounded-full border-grayBorder border " >
+                    onBlur={handleDeactivate} className={`${isActive && "bg-[#EBEBEB]"} flex justify-between items-center px-2 py-2 rounded-full border-grayBorder border `} >
                     {/* location */}
                     <div className="dropdown " >
-                        <div tabIndex={0} role="button" className="flex justify-between items-center gap-2 px-6 py-1 rounded-full hover:bg-btn-hover w-[230px] ">
+                        <div tabIndex={0} role="button" className="flex justify-between items-center gap-2 px-6 py-1 rounded-full focus:bg-white hover:bg-btn-hover w-[230px] ">
                             <div className="flex flex-col justify-start items-start w-full">
                                 <h1>Where</h1>
                                 {
                                     country ? <p>{country}</p> : <input className="bg-transparent text-primaryText focus:outline-none focus:ring-0 border-none text-sm" type="text" name="place" id="" placeholder="search destinations" />
                                 }
                             </div>
-                            <button className="border-none p-0">
+                            <div onClick={()=>{setcountry("")}} className={`${country==""?"hidden":"flex"} justify-center items-center`}>
                                 <IoClose />
-                            </button>
+                            </div>
                         </div>
                         <div
                             tabIndex={0}
@@ -98,9 +104,9 @@ const FirstFilter = () => {
                                 <h1>Check In - Check Out</h1>
                                 <p className=" text-softText text-sm">{dateText}</p>
                             </div>
-                            <button className="border-none p-0">
+                            <div onClick={handleClearDate} className={`${country==""?"hidden":"flex"} justify-center items-center`}>
                                 <IoClose />
-                            </button>
+                            </div>
                         </div>
                         <div
                             tabIndex={1}
@@ -135,8 +141,6 @@ const FirstFilter = () => {
                             </div>
                         </div>
                     </div>
-
-
                 </form>
 
             </div>

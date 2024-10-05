@@ -2,22 +2,12 @@
 import ResponsiveDiv from "./ResponsiveDiv"
 // import properties from "../../assets/data/propertydata.json"
 import PropertyCard from "../ui/PropertyCard"
-import { useEffect, useState } from 'react';
-import { getAllProperties } from "@/utils/getAllProperties";
+
 import { useProperty } from "@/context/PropertyContext";
 
 
 const Properties = () => {
-    // const [properties, setProperties] = useState([]);
 
-    // useEffect(() => {
-    //     const fetchProperties = async () => {
-    //         const data = await getAllProperties();
-    //         setProperties(data);
-    //     };
-
-    //     fetchProperties();
-    // }, []);
     const {state}=useProperty()
     console.log(state.loading)
 
