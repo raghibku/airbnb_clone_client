@@ -5,13 +5,13 @@ import { useState } from "react"
 interface GuestProps {
     adults: number;
     setadults: React.Dispatch<React.SetStateAction<number>>;
-    children: number;
+    childreno: number;
     setchildren: React.Dispatch<React.SetStateAction<number>>;
     pets: number;
     setpets: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const Guests: React.FC<GuestProps> = ({ adults, setadults, children, setchildren, pets, setpets }) => {
+const Guests: React.FC<GuestProps> = ({ adults, setadults, childreno, setchildren, pets, setpets }) => {
 
     // const handleSetAdult = (tagValue: number) => {
     //     dispatch({ type: "SET_ADULTS", payload: tagValue });
@@ -41,9 +41,9 @@ const Guests: React.FC<GuestProps> = ({ adults, setadults, children, setchildren
                 </div>
                 {/* right */}
                 <div className="flex justify-center items-center gap-2">
-                    <div className={`btn btn-circle btn-sm bg-white  ${children > 0 ? "" : "btn-disabled"}`} onClick={() => { setchildren(children - 1) }}>-</div>
-                    <p>{children}</p>
-                    <div className="btn btn-circle btn-sm bg-white" onClick={() => { setchildren(children + 1) }}>+</div>
+                    <div className={`btn btn-circle btn-sm bg-white  ${childreno > 0 ? "" : "btn-disabled"}`} onClick={() => { setchildren(childreno - 1) }}>-</div>
+                    <p>{childreno}</p>
+                    <div className="btn btn-circle btn-sm bg-white" onClick={() => { setchildren(childreno + 1) }}>+</div>
                 </div>
             </div>
             {/* pets */}

@@ -33,9 +33,9 @@ const LocationPicker: React.FC<LocationPickerProps> = ({ country, setcountry }) 
     return (
         <div className="grid grid-cols-3 gap-3 w-[340px]">
             {
-                locations.map((item) => {
+                locations.map((item,index) => {
                     return (
-                        <div onClick={()=>{handleSelectCountry(item.country)}}
+                        <div key={index} onClick={()=>{handleSelectCountry(item.country)}}
                             className="flex flex-col justify-center items-center gap-2 hover:bg-grayBorder p-2 rounded-md">
                             <Image
                                 src={item.image}

@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
-import ResponsiveDiv from "@/components/shared/ResponsiveDiv";
 
 export const metadata: Metadata = {
   title: "Airbnb Clone",

@@ -60,7 +60,7 @@ const Navbar = () => {
                                 alt="user image"
                             />
                         </div>
-                        <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                        <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[30] w-52 p-2 shadow">
                             <li><a>Sign Up</a></li>
                             <li className="pb-2 border-b border-grayBorder"><a>Log in</a></li>
                             <li className="pt-2"><a>Gift Cards</a></li>

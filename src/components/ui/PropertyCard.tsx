@@ -3,7 +3,7 @@ import Image from "next/image"
 import { IoIosStar } from "react-icons/io";
 
 interface Property {
-    // id: string;
+    _id: string;
     property_name: string;
     property_images: string[];
     country_location: string;

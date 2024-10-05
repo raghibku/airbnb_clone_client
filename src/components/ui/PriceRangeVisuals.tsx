@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+
 import { Range } from 'react-range';
 interface PriceRangeSliderProps {
-    values: number[];
-    setValues: React.Dispatch<React.SetStateAction<number[]>>; // The type of setcountry
+  values: number[];
+  setValues: React.Dispatch<React.SetStateAction<number[]>>; // The type of setcountry
 }
-const PriceRangeSlider: React.FC<PriceRangeSliderProps>= ({values,setValues}) => {
-  
+const PriceRangeSlider: React.FC<PriceRangeSliderProps> = ({ values, setValues }) => {
+
   const handleRangeChange = (newValues: number[]) => {
     setValues(newValues);
   };
@@ -33,12 +33,14 @@ const PriceRangeSlider: React.FC<PriceRangeSliderProps>= ({values,setValues}) =>
           />
         )}
       />
-      
+
       {/* Price Values */}
-      <div className="flex justify-between mt-3 text-sm text-gray-700">
-        <span>Min: ${values[0]}</span>
-        <span>Max: ${values[1]}</span>
-      </div>
+      <>
+        <div className="flex justify-between mt-3 text-sm text-gray-700">
+          <span>Min: ${values[0]}</span>
+          <span>Max: ${values[1]}</span>
+        </div>
+      </>
     </div>
   );
 };

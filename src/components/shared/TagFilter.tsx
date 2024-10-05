@@ -53,9 +53,9 @@ const TagFilter = () => {
 
                     <div className="w-full flex justify-between items-center px-6 py-4 gap-8 text-xs  ">
                         {
-                            alltags.map((item) => {
+                            alltags.map((item,index) => {
                                 return (
-                                    <div onClick={() => { handleTagClick(item.title_tag) }} className={` p-2 flex flex-col justify-center items-center gap-1 text-nowrap hover:shadow-md hover:text-primaryText ${item.title_tag == state.tagg ? "border-b-2 border-gray-800" : ""}
+                                    <div key={index} onClick={() => { handleTagClick(item.title_tag) }} className={` p-2 flex flex-col justify-center items-center gap-1 text-nowrap hover:shadow-md hover:text-primaryText ${item.title_tag == state.tagg ? "border-b-2 border-gray-800" : ""}
                                 `}>
                                         {/* ${item.title_tag == state.tagg ? "drop-shadow-customTag" : "" */}
                                         <Image
@@ -85,7 +85,20 @@ const TagFilter = () => {
             {/* filter */}
             {/* You can open the modal using document.getElementById('ID').showModal() method */}
             <div className="w-[30%] flex justify-center items-center gap-4">
-                <button className="btn btn-outline hover:bg-white text-primaryText hover:text-primaryText border-grayBorder flex justify-center items-center gap-2" onClick={() => document.getElementById('my_modal_3').showModal()}><RxMixerHorizontal /> Filter</button>
+                {/* <button className="btn btn-outline hover:bg-white text-primaryText hover:text-primaryText border-grayBorder flex justify-center items-center gap-2" onClick={() => document.getElementById('my_modal_3').showModal()}><RxMixerHorizontal /> Filter</button> */}
+                {/* nw */}
+                <button
+                    className="btn btn-outline hover:bg-white text-primaryText hover:text-primaryText border-grayBorder flex justify-center items-center gap-2"
+                    onClick={() => {
+                        const modal = document.getElementById('my_modal_3') as HTMLDialogElement | null;
+                        if (modal) {
+                            modal.showModal(); // Only call showModal if modal exists and is of type HTMLDialogElement
+                        }
+                    }}
+                >
+                    <RxMixerHorizontal /> Filter
+                </button>
+                {/* nw */}
                 <dialog id="my_modal_3" className="modal ">
                     <div className="modal-box w-[40vw] h-[75vh]">
                         <form method="dialog">

@@ -19,7 +19,7 @@ const FirstFilter = () => {
     const [checkOutDate, setcheckOutDate] = useState("")
     const [country, setcountry] = useState("")
     const [adults, setadults] = useState(0)
-    const [children, setchildren] = useState(0)
+    const [childreno, setchildren] = useState(0)
     const [pets, setpets] = useState(0)
 
     // out
@@ -28,7 +28,7 @@ const FirstFilter = () => {
         dispatch({ type: "SET_CHECKOUT_DATE", payload: checkOutDate });
         dispatch({ type: "SET_COUNTRY", payload: country });
         dispatch({ type: "SET_ADULTS", payload: adults })
-        dispatch({ type: "SET_CHILDREN", payload: children }) 
+        dispatch({ type: "SET_CHILDREN", payload: childreno }) 
         dispatch({ type: "SET_PETS", payload: pets }) 
     }
 
@@ -124,7 +124,7 @@ const FirstFilter = () => {
                             <div className="flex flex-col justify-start items-start text-nowrap overflow-hiddden">
                                 <h1>Who</h1>
                                 {
-                                    adults > 0 ? <p className=" text-softText text-sm">{adults} Adult, {children} Children,{pets} Pets </p> : <p className=" text-softText text-sm">Add Guests</p>
+                                    adults > 0 ? <p className=" text-softText text-sm">{adults} Adult, {childreno} Children,{pets} Pets </p> : <p className=" text-softText text-sm">Add Guests</p>
                                 }
                             </div>
                             {/* search */}
@@ -137,7 +137,7 @@ const FirstFilter = () => {
                             tabIndex={2}
                             className="dropdown-content card card-compact bg-white text-primaryText z-[1] w-auto p-2 shadow">
                             <div className="card-body">
-                                <Guests adults={adults} setadults={setadults} children={children} setchildren={setchildren} pets={pets} setpets={setpets}/>
+                                <Guests adults={adults} setadults={setadults} childreno={childreno} setchildren={setchildren} pets={pets} setpets={setpets}/>
                             </div>
                         </div>
                     </div>
